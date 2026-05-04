@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maitha's Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet"></head>
+
+<body>
+<img src="star.png" class="scrap-sticker sticker-star" alt="">
+<img src="tape.png" class="scrap-sticker sticker-tape" alt="">
+<img src="flower.png" class="scrap-sticker sticker-flower" alt="">
+<img src="stamp.png" class="scrap-sticker sticker-stamp" alt="">
+<img src="torn-paper.png" class="scrap-sticker sticker-paper" alt="">
+<img src="polaroid.png" class="scrap-sticker sticker-polaroid" alt="">
+
+  <div id="intro-screen">
+    <div class="intro-box">
+      <p>enter</p>
+      <h1>Maitha Alshamsi's Portfolio</h1>
+      <button id="enter-button">open scrapbook</button>
+    </div>
+  </div>
+
+  <nav>
+    <h1>maitha's portfolio</h1>
+    <div>
+      <a href="#about">About</a>
+      <a href="#learning">What I Learned</a>
+      <a href="#projects">Projects</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <p class="small">my digital scrapbook</p>
+    <h2>Different Sides of Me</h2>
+    <p>
+      A collection of projects about place, culture, play,
+      and trying to get my life together.
+    </p>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      This portfolio is like a scrapbook of my work. Each project
+      represents a different side of me: my student side, my cultural side,
+      my playful side, and my very real procrastinating side.
+    </p>
+  </section>
+
+  <!-- WHAT I LEARNED -->
+  <section id="learning" class="learning">
+    <h2>What I Learned</h2>
+    <p class="learning-intro">
+      Click each note to see what this class helped me understand.
+    </p>
+
+    <div class="learning-grid">
+
+      <div class="learning-card">
+        <h3>Sound</h3>
+        <p>
+          I learned that sound is not just background decoration. It can guide
+          the mood, make interactions feel more alive, and help the user
+          understand what is happening.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <h3>Transitions</h3>
+        <p>
+          I learned how small transitions can make a website feel smoother.
+          A delay, fade, hover, or stamp animation can make the experience feel
+          more intentional instead of just clicking from one page to another.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <h3>Video</h3>
+        <p>
+          I learned that video can be interactive, not just something people
+          watch. It can become part of the story when the viewer has choices
+          and control.
+        </p>
+      </div>
+
+      <div class="learning-card">
+        <h3>Storytelling</h3>
+        <p>
+          I learned that coding is also a way of telling a story. The layout,
+          colors, buttons, and interactions all say something about me and the
+          kind of experience I want people to have.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2>My Projects</h2>
+    <p class="hint">Click a card to open it and collect a side ♡</p>
+
+    <div class="grid">
+
+      <div class="card">
+        <span class="emoji">🎓</span>
+        <h3>Student Me</h3>
+        <h2>Campus Quests</h2>
+
+        <div class="note">
+          <p>
+            This shows my student side: turning campus into something
+            easier and more fun to explore.
+          </p>
+          <a href="#">enter project</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="emoji">🏠</span>
+        <h3>Cultural Me</h3>
+        <h2>Emirati Home Comic</h2>
+
+        <div class="note">
+          <p>
+            This reflects my cultural side: home, memory,
+            and everyday traditions.
+          </p>
+          <a href="#">enter project</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="emoji">🐈</span>
+        <h3>Playful Me</h3>
+        <h2>Lost Cat Game</h2>
+
+        <div class="note">
+          <p>
+            This is my playful side: storytelling, games,
+            and interactive ideas.
+          </p>
+          <a href="#">enter project</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <span class="emoji">⏰</span>
+        <h3>Procrastinating Me</h3>
+        <h2>How Not to Procrastinate</h2>
+
+        <div class="note">
+          <p>
+            This is my realistic side: struggling with time,
+            distraction, and trying to improve.
+          </p>
+          <a href="#">enter project</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="side-tracker">
+    <p>collected</p>
+
+    <div class="side-stamps">
+      <span id="mini-stamp-0">○</span>
+      <span id="mini-stamp-1">○</span>
+      <span id="mini-stamp-2">○</span>
+      <span id="mini-stamp-3">○</span>
+    </div>
+  </div>
+
+  <div id="project-viewer">
+    <button id="back-button">← back to portfolio</button>
+    <iframe id="project-frame"></iframe>
+  </div>
+
+  <footer>
+    <p>made by Maitha Alshamsi</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
