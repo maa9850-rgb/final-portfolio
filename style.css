@@ -186,16 +186,7 @@ nav a:hover {
   gap: 18px;
 }
 
-.learning-card {
-  background: #f6f4ed;
-  border: 2px dashed #e6a6b1;
-  border-radius: 20px;
-  padding: 20px;
-  cursor: pointer;
-  max-height: 78px;
-  overflow: hidden;
-  transition: 0.4s ease;
-}
+
 
 .learning-card h3 {
   color: #c75c74;

@@ -144,3 +144,20 @@ cards.forEach(function(card, index) {
   });
 });
 
+const enterBtn = document.getElementById("enter-button");
+const introScreen = document.getElementById("intro-screen");
+const sound = document.getElementById("card-sound");
+
+enterBtn.addEventListener("click", () => {
+  // play fold sound
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+
+  // fade out intro
+  introScreen.classList.add("hide");
+
+  // fully remove after fade
+  setTimeout(() => {
+    introScreen.style.display = "none";
+  }, 800);
+});
