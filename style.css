@@ -677,4 +677,33 @@ footer {
   transform: translateY(-50%);
   z-index: 999;
 }
+.learning-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  max-width: 1000px;
+  margin: 30px auto;
+}
 
+.learning-card {
+  background: #fffdf7;
+  border: 3px dashed #d96b8a;
+  border-radius: 28px;
+  padding: 30px;
+  min-height: 220px;
+}
+
+.learning-card h3 {
+  color: #c75c74;
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+.learning-card p {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  color: #476b66;
+  font-size: 18px;
+  line-height: 1.5;
+}
