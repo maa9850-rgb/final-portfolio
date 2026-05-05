@@ -168,16 +168,6 @@
 
   <script src="script.js"></script>
 
-  <script>
-const cardSound = document.getElementById("card-sound");
-
-document.querySelectorAll(".card").forEach(card => {
-  card.addEventListener("click", (e) => {
-    e.stopPropagation();
-    cardSound.currentTime = 0;
-    cardSound.play().catch(() => {});
-  });
-});
-</script>
+ 
 </body>
 </html>
