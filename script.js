@@ -24,8 +24,18 @@ let backButton = document.getElementById("back-button");
 let introScreen = document.getElementById("intro-screen");
 let enterButton = document.getElementById("enter-button");
 
-enterButton.addEventListener("click", function() {
+enterBtn.addEventListener("click", () => {
+  // play sound
+  const sound = document.getElementById("card-sound");
+  sound.currentTime = 0;
+  sound.play().catch(() => {});
+
+  // original behavior
   introScreen.classList.add("hide");
+
+  setTimeout(() => {
+    introScreen.style.display = "none";
+  }, 800);
 });
 
 learningCards.forEach(function(card) {
