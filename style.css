@@ -719,3 +719,11 @@ footer {
   opacity: 1;
   margin-top: 10px;
 }
+
+.learning-card p {
+  display: none;
+}
+
+.learning-card.open p {
+  display: block;
+}
