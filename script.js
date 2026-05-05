@@ -25,7 +25,8 @@ let introScreen = document.getElementById("intro-screen");
 let enterButton = document.getElementById("enter-button");
 let sound = document.getElementById("card-sound");
 
-/* ENTER SCRAPBOOK */
+
+/* ENTER SCRAPBOOK (ONLY PLACE WITH SOUND) */
 if (enterButton && introScreen) {
   enterButton.addEventListener("click", function () {
     if (sound) {
@@ -41,6 +42,7 @@ if (enterButton && introScreen) {
   });
 }
 
+
 /* LEARNING CARDS */
 learningCards.forEach(function(card) {
   card.addEventListener("click", function() {
@@ -48,16 +50,12 @@ learningCards.forEach(function(card) {
   });
 });
 
-/* PROJECT CARDS */
+
+/* PROJECT CARDS (NO SOUND HERE) */
 cards.forEach(function(card, index) {
   let button = card.querySelector("a");
 
   card.addEventListener("click", function() {
-    if (sound) {
-      sound.currentTime = 0;
-      sound.play().catch(function () {});
-    }
-
     card.classList.toggle("open");
 
     let miniStamp = document.getElementById("mini-stamp-" + index);
@@ -85,11 +83,6 @@ cards.forEach(function(card, index) {
       event.preventDefault();
       event.stopPropagation();
 
-      if (sound) {
-        sound.currentTime = 0;
-        sound.play().catch(function () {});
-      }
-
       setTimeout(function() {
         projectFrame.src = links[index];
         projectViewer.classList.add("show");
@@ -98,6 +91,7 @@ cards.forEach(function(card, index) {
   }
 });
 
+
 /* BACK BUTTON */
 if (backButton) {
   backButton.addEventListener("click", function() {
@@ -105,6 +99,7 @@ if (backButton) {
     projectFrame.src = "";
   });
 }
+
 
 /* POPUPS */
 function showStampPopup(message) {
@@ -135,6 +130,7 @@ function showFinalPopup() {
   }, 3000);
 }
 
+
 /* CURSOR */
 document.addEventListener("mousedown", function() {
   document.documentElement.classList.add("cursor-closed");
@@ -147,6 +143,7 @@ document.addEventListener("mouseup", function() {
 document.addEventListener("mouseleave", function() {
   document.documentElement.classList.remove("cursor-closed");
 });
+
 
 /* SPARKLES */
 let cardColors = [
