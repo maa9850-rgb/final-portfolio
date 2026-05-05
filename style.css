@@ -702,10 +702,3 @@ footer {
 
 
 
-.learning-card p {
-  display: none;
-}
-
-.learning-card.open p {
-  display: block;
-}
