@@ -677,11 +677,11 @@ footer {
 }
 
 .learning-card {
-  background: #fffdf7;
-  border: 3px dashed #d96b8a;
-  border-radius: 28px;
-  padding: 30px;
-  min-height: 220px;
+  background: transparent;
+  border: none;
+  padding: 10px 0;
+  min-height: auto;
+  cursor: pointer;
 }
 
 .learning-card h3 {
@@ -691,12 +691,11 @@ footer {
 }
 
 .learning-card p {
+  display: none;
+}
+
+.learning-card.open p {
   display: block;
-  opacity: 1;
-  visibility: visible;
-  color: #476b66;
-  font-size: 18px;
-  line-height: 1.5;
 }
 
 
