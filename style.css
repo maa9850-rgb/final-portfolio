@@ -700,25 +700,7 @@ footer {
 }
 
 
-.learning-card {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
 
-/* CLOSED STATE */
-.learning-card p {
-  max-height: 0;
-  overflow: hidden;
-  opacity: 0;
-  transition: all 0.3s ease;
-}
-
-/* OPEN STATE */
-.learning-card.open p {
-  max-height: 200px;
-  opacity: 1;
-  margin-top: 10px;
-}
 
 .learning-card p {
   display: none;
