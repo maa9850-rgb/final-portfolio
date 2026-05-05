@@ -23,19 +23,41 @@ let backButton = document.getElementById("back-button");
 
 let introScreen = document.getElementById("intro-screen");
 let enterButton = document.getElementById("enter-button");
+let sound = document.getElementById("card-sound");
 
+/* ENTER SCRAPBOOK */
+if (enterButton && introScreen) {
+  enterButton.addEventListener("click", function () {
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play().catch(function () {});
+    }
 
+    introScreen.classList.add("hide");
 
+    setTimeout(function () {
+      introScreen.style.display = "none";
+    }, 800);
+  });
+}
+
+/* LEARNING CARDS */
 learningCards.forEach(function(card) {
   card.addEventListener("click", function() {
     card.classList.toggle("open");
   });
 });
 
+/* PROJECT CARDS */
 cards.forEach(function(card, index) {
   let button = card.querySelector("a");
 
   card.addEventListener("click", function() {
+    if (sound) {
+      sound.currentTime = 0;
+      sound.play().catch(function () {});
+    }
+
     card.classList.toggle("open");
 
     let miniStamp = document.getElementById("mini-stamp-" + index);
@@ -58,20 +80,33 @@ cards.forEach(function(card, index) {
     }
   });
 
-  button.addEventListener("click", function(event) {
-    event.preventDefault();
-    event.stopPropagation();
+  if (button) {
+    button.addEventListener("click", function(event) {
+      event.preventDefault();
+      event.stopPropagation();
 
-    projectFrame.src = links[index];
-    projectViewer.classList.add("show");
+      if (sound) {
+        sound.currentTime = 0;
+        sound.play().catch(function () {});
+      }
+
+      setTimeout(function() {
+        projectFrame.src = links[index];
+        projectViewer.classList.add("show");
+      }, 500);
+    });
+  }
+});
+
+/* BACK BUTTON */
+if (backButton) {
+  backButton.addEventListener("click", function() {
+    projectViewer.classList.remove("show");
+    projectFrame.src = "";
   });
-});
+}
 
-backButton.addEventListener("click", function() {
-  projectViewer.classList.remove("show");
-  projectFrame.src = "";
-});
-
+/* POPUPS */
 function showStampPopup(message) {
   let popup = document.createElement("div");
   popup.classList.add("stamp-popup");
@@ -100,25 +135,25 @@ function showFinalPopup() {
   }, 3000);
 }
 
-document.addEventListener("mousedown", () => {
+/* CURSOR */
+document.addEventListener("mousedown", function() {
   document.documentElement.classList.add("cursor-closed");
 });
 
-document.addEventListener("mouseup", () => {
+document.addEventListener("mouseup", function() {
   document.documentElement.classList.remove("cursor-closed");
 });
 
-document.addEventListener("mouseleave", () => {
+document.addEventListener("mouseleave", function() {
   document.documentElement.classList.remove("cursor-closed");
 });
 
-
-
+/* SPARKLES */
 let cardColors = [
-  ["#5f8f89", "#a8cbb7", "#fff7c2"], // Student Me
-  ["#00732f", "#ffffff", "#000000", "#ce1126"], // Cultural Me
-  ["#e6a6b1", "#c75c74", "#fff0f5"], // Playful Me
-  ["#7b6fa6", "#f6d6ff", "#fff7c2"] // Procrastinating Me
+  ["#5f8f89", "#a8cbb7", "#fff7c2"],
+  ["#00732f", "#ffffff", "#000000", "#ce1126"],
+  ["#e6a6b1", "#c75c74", "#fff0f5"],
+  ["#7b6fa6", "#f6d6ff", "#fff7c2"]
 ];
 
 cards.forEach(function(card, index) {
@@ -141,34 +176,3 @@ cards.forEach(function(card, index) {
     }, 700);
   });
 });
-
-const enterBtn = document.getElementById("enter-button");
-const introScreen = document.getElementById("intro-screen");
-const sound = document.getElementById("card-sound");
-
-enterBtn.addEventListener("click", () => {
-  // play fold sound
-  sound.currentTime = 0;
-  sound.play().catch(() => {});
-
-  // fade out intro
-  introScreen.classList.add("hide");
-
-  // fully remove after fade
-  setTimeout(() => {
-    introScreen.style.display = "none";
-  }, 800);
-});
-
-const enterButton = document.getElementById("enter-button");
-const introScreen = document.getElementById("intro-screen");
-
-if (enterButton && introScreen) {
-  enterButton.onclick = function () {
-    introScreen.classList.add("hide");
-
-    setTimeout(function () {
-      introScreen.style.display = "none";
-    }, 800);
-  };
-}
